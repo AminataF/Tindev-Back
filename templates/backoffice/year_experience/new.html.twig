@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New YearExperience{% endblock %}
+
+{% block body %}
+    <h1>Create new YearExperience</h1>
+
+    {{ include('backoffice/year_experience/_form.html.twig') }}
+
+    <a href="{{ path('app_backoffice_year_experience_index') }}">back to list</a>
+{% endblock %}

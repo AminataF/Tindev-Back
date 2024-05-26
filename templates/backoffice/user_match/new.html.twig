@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New UserMatch{% endblock %}
+
+{% block body %}
+    <h1>Create new UserMatch</h1>
+
+    {{ include('backoffice/user_match/_form.html.twig') }}
+
+    <a href="{{ path('app_backoffice_user_match_index') }}">back to list</a>
+{% endblock %}

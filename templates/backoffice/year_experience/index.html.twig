@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}YearExperience index{% endblock %}
+
+{% block body %}
+    <h1>YearExperience index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>YearExp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for year_experience in year_experiences %}
+            <tr>
+                <td>{{ year_experience.id }}</td>
+                <td>{{ year_experience.yearExp }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_year_experience_show', {'id': year_experience.id}) }}">show</a>
+                    <a href="{{ path('app_backoffice_year_experience_edit', {'id': year_experience.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_backoffice_year_experience_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserMatch{% endblock %}
+
+{% block body %}
+    <h1>UserMatch</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user_match.id }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ user_match.status }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ user_match.date ? user_match.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_backoffice_user_match_index') }}">back to list</a>
+
+    <a href="{{ path('app_backoffice_user_match_edit', {'id': user_match.id}) }}">edit</a>
+
+    {{ include('backoffice/user_match/_delete_form.html.twig') }}
+{% endblock %}

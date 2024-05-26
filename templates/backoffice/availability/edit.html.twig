@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Availability{% endblock %}
+
+{% block body %}
+    <h1>Edit Availability</h1>
+
+    {{ include('backoffice/availability/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_backoffice_availability_index') }}">back to list</a>
+
+    {{ include('backoffice/availability/_delete_form.html.twig') }}
+{% endblock %}

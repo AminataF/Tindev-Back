@@ -1,0 +1,49 @@
+<nav
+	class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+	{# if app.user != null #}
+	{% if app.user %}
+		
+		<a class="navbar-brand" href="{{ path('app_backoffice_user_index')}}">Tindev -BackOffice</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+    <span> Administrateur Connecté : {{ app.user.firstname }}</span>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('app_backoffice_user_index')}}">Utilisateurs</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_project_index')}}">Projets</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_job_index')}}">Jobs</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_competence_index')}}">Compétences</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_category_index')}}">Catégories</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_availability_index')}}">disponibilités</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_year_experience_index')}}">Expérience pro</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_backoffice_user_match_index')}}">Matchs</a>
+				</li>
+			</ul>
+			<a class="btn btn-danger" href="{{ path('app_logout')}}">déconnexion</a>
+			<i class="bi bi-person-square"></i>
+		{% else %}
+			<a class="navbar-brand" href="{{ path('app_backoffice_user_index')}}">Tindev -BackOffice</a>
+		{% endif %}
+
+		{# <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form> #}
+	</div>
+</nav>
